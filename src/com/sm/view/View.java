@@ -52,6 +52,10 @@ public class View {
         return scanner.next();
     }
 
+    public void displayMessage(String message) {
+        System.out.println(message);
+    }
+
     public void closeScanner() {
         scanner.close();
     }

@@ -56,6 +56,7 @@ public class Controller {
                 case 6:
                     // save info
                     model.saveDatabase(file);
+                    view.displayMessage("Database saved to file.");
                     break;
                 case 7:
                     // exit:
