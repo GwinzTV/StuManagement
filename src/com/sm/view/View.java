@@ -7,6 +7,10 @@ public class View {
     private Scanner scanner;
     private static int id = 0;
 
+    public View(){
+        this.scanner = new Scanner(System.in);
+    }
+
     public void welcome() {
         System.out.println("\nWelcome to Student Management System\n");
     }
