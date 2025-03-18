@@ -22,10 +22,23 @@ public class Model implements Serializable {
         return database.get(key);
     }
 
+    // get all entries
+    public HashMap<String, HashMap<String, Integer>> getAllEntries() {
+        return database;
+    }
+
+    public boolean deleteEntry(String key) {
+        return database.remove(key) != null;
+    }
+
+    public boolean checkExists(String key) {
+        return database.containsKey(key);
+    }
+
     // Method to serialize (save) the database to a file
     public void saveDatabase(File file) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(file))) {
-            oos.writeObject(database);  // Serialize the HashMap object to a file
+            oos.writeObject(database);
         } catch (IOException e) {
             System.out.println("Error saving database: " + e.getMessage());
         }
@@ -33,12 +46,11 @@ public class Model implements Serializable {
 
     // Method to deserialize (load) the database from a file
     @SuppressWarnings("unchecked")
-    public HashMap<String, HashMap<String, Integer>> loadDatabase(File file) {
+    public void loadDatabase(File file) {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
-            return (HashMap<String, HashMap<String, Integer>>) ois.readObject();  // Deserialize the HashMap from the file
+            database = (HashMap<String, HashMap<String, Integer>>) ois.readObject();
         } catch (IOException | ClassNotFoundException e) {
             System.out.println("Error loading database: " + e.getMessage());
-            return null;  // Return null if loading fails
         }
     }
 }
