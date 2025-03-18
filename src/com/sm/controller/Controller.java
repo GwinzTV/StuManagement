@@ -44,8 +44,21 @@ public class Controller {
                     int studentAge = info.get("studentAge");
                     View.viewStudent(new Object[]{studentName, studentID, studentAge});
                     break;
+                case 3:
+                    // edit student info
+                    break;
+                case 4:
+                    // delete student info
+                    break;
+                case 5:
+                    // view all student info
+                    break;
                 case 6:
+                    // save info
+                    break;
+                case 7:
                     // exit:
+                    view.closeScanner();
                     return;
                 default:
                     System.out.println("Invalid choice, please try again");

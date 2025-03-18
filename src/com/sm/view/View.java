@@ -12,17 +12,19 @@ public class View {
     }
 
     public void welcome() {
-        System.out.println("\nWelcome to Student Management System\n");
+        System.out.println("\nWelcome to Student Management System");
     }
 
     public int mainOptions() {
-        System.out.println("Select a number for the option you require");
+        System.out.println("\nSelect a number for the option you require");
         System.out.println("[1] Register Student");
         System.out.println("[2] View Student Information");
         System.out.println("[3] Edit Student Information");
         System.out.println("[4] Delete Student Information");
         System.out.println("[5] View All Students Information");
-        System.out.println("[6] Exit Program");
+        System.out.println("[6] Save");
+        System.out.println("[7] Exit Program");
+        System.out.print("Enter your choice: ");
         return scanner.nextInt();
     }
 
@@ -48,5 +50,9 @@ public class View {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter Student Name: ");
         return scanner.next();
+    }
+
+    public void closeScanner() {
+        scanner.close();
     }
 }
