@@ -23,7 +23,7 @@ public class Model implements Serializable {
     }
 
     // Method to serialize (save) the database to a file
-    public void saveDatabase(HashMap<String, HashMap<String, Integer>> database, File file) {
+    public void saveDatabase(File file) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(file))) {
             oos.writeObject(database);  // Serialize the HashMap object to a file
         } catch (IOException e) {

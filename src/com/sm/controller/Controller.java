@@ -55,6 +55,7 @@ public class Controller {
                     break;
                 case 6:
                     // save info
+                    model.saveDatabase(file);
                     break;
                 case 7:
                     // exit:
