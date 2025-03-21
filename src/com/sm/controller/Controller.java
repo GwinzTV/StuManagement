@@ -39,11 +39,13 @@ public class Controller {
                 case 2:
                     String studentName = view.getName();
                     // pull info from database then insert into data
+                    long start = System.nanoTime();
                     if (model.checkExists(studentName)) {
                         HashMap<String, Integer> info = model.getEntry(studentName);
                         int studentID = info.get("studentID");
                         int studentAge = info.get("studentAge");
-                        view.viewStudent(new Object[]{studentName, studentID, studentAge});
+                        long timeElapsed = System.nanoTime() - start;
+                        view.viewStudent(new Object[]{studentName, studentID, studentAge, timeElapsed});
                     } else {
                         view.displayMessage("Student Not Found");
                     }

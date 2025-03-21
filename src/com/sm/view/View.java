@@ -49,6 +49,8 @@ public class View {
         System.out.println("\nStudent Name: " + data[0]);
         System.out.println("Student ID: " + data[1]);
         System.out.println("Student Age: " + data[2]);
+        System.out.println("Time in Nanoseconds: " + (long) data[3]);
+        System.out.println("Time in milliseconds: " + ((long) data[3] / 1000000));
     }
 
     public String getName() {
